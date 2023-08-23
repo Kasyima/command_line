@@ -1,0 +1,4 @@
+   Compiling command_line v0.1.0 (/home/kasyima/RUST_PROJECTS/command_line)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.05s
+     Running `target/debug/command_line woof`
+A cat shouldn't bark like a dog.
