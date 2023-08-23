@@ -9,3 +9,5 @@ edition = "2021"
 anyhow = "1.0.75"
 clap = {version="4.2.1", features= ["derive"]}
 colored = "2.0.4"
+assert_cmd = "2.0.10"
+predicates = "3.0.2"

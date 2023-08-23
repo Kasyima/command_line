@@ -1,17 +1,3 @@
-//! It's features will be::
-//! Take a message string as the positional argument.
-//! Take a -h/--help flag to print help message
-//! Take a -d/--dead flag that makes the cat's eyes become xx, which is
-//! the comical expression of dead eyes.
-//!
-//! Print in color
-//! Print the error messages to STDERR for error handling.
-//! Accept STDIN for piping and pipe the output to other programs..
-//! Perform integration tests.
-//! Package and publish to crates.io.
-//!
-//! cargo add clap --features derive
-
 use std::io::{self, Read};
 
 use anyhow::{Context, Result};
@@ -104,55 +90,3 @@ fn main() -> Result<()> {
 
     Ok(())
 }
-
-/*
-
-* The colored crate defines a Colorize trait, which is implemented on a &str and String.
-* This trait provides various chainable coloring functions::
-    * Coloring the text: .red(), .green(), .blue(), etc.
-    * Coloring the background: .on_red(), .on_green(), .on_blue(), etc.
-    * Brighter version: .bright_red(), .on_bright_green(), etc.
-    * Styling: .bold(), .underline(), .italic(), etc.
-
-? If you want to define a more user-friendly error, you can use the anyhow crate
-
-
-
-- The anyhow crate provides a Context trait, which wraps the original error with a human-readable and
-user-facing explanation of the error, called context.
-- To use Context, you can call the with_context() function on std::result::Result so you can define a context
-message.
-- The Result from std is shadowed by anyhow::Result.
-- This struct contains the std::io::Error from read_to_string() and the "could not read file filename" error message.
-
-- The anyhow crate allows you to ignore the specifics of what error type you want to use, and easily put all the info'
-in a single Result type with different context data.
-- The anyhow crate and its context are much more than just printing a human-friendly error message.
-- If we have a function call chain, we can have a nested chain of errors; each has a context that is relevant to the
-layer of abstraction.
-- It also gives ergonomic ways to manipulate the chain of errors and backtraces.
-- It allows easier downcasting from a generic Error to a specific type, compared to the built-in std::error::Error.
-
-
-
-! Piping to Other Commands
-
-- Piping -- the text output of one command can be sent directly to another command as an input.
-
-- This allows a command-line program to be designed in a modular way and multiple programs to work
-- together easily without specialized protocols.
-
-- You can set the NO_COLOR environment variable to 1 to turn off the coloring.
-
-
-! Accepting STDIN
-
-- Taking input from STDIN is another way to interact with other programs.
-- U can create a switch --stdin that enables this behavior.
-
-- Eg.., echo -n "Hello world" | catsay --stdin
-- The -n flag for echo is to tell echo not to add a new line to the end of its STDOUT output.
-
-
-
-*/
