@@ -1,6 +1,6 @@
 use assert_cmd::prelude::*;
 use predicates::prelude::*;
-use std::process::Commands;
+use std::process::Command;
 
 #[test]
 fn run_with_defaults() {
